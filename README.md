@@ -1,3 +1,3 @@
-## Go example 1
+## Go example 2
 
-Shows basic language syntax.
+Cards and decks.
