@@ -16,5 +16,5 @@ func main() {
 
 	hand2 := newDeckFromFile("hand20190609")
 
-	hand2.print();
+	hand2.print()
 }
