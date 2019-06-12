@@ -8,7 +8,7 @@ type person struct {
 }
 
 func main() {
-	person1 := person("bob", "Jones")
+	person1 := person{"bob", "Jones"}
 	fmt.Println(person1);
 
 	cards := newDeck()
