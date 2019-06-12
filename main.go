@@ -2,7 +2,15 @@ package main
 
 import "fmt"
 
+type person struct {
+	firstname string
+	lastname string
+}
+
 func main() {
+	person1 := person("bob", "Jones")
+	fmt.Println(person1);
+
 	cards := newDeck()
 	hand, remainingDeck := deal(cards, 5)
 
