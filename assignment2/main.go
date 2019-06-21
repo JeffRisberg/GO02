@@ -29,12 +29,12 @@ func printArea(s shape) float64 {
 
 func main() {
 	square1 := square{
-		sideLength: 6,
+		sideLength: 5,
 	}
 
 	triangle1 := triangle{
-		base:   10,
-		height: 5,
+		base:   6,
+		height: 8,
 	}
 
 	fmt.Println(printArea(square1))
