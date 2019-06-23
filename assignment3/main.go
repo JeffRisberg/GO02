@@ -2,27 +2,26 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 	"os"
 	"io"
 )
 
-type logWriter struct{}
-
-func (logWriter) Write(bs []byte) (n int, err error) {
-	fmt.Println(bs)
-	fmt.Println("just wrote this many bytes:", len(bs))
-	return len(bs), nil
-}
-
 func main() {
-	resp, err := http.Get("http://google.com")
+	if len(os.Args) < 2 {
+		fmt.Println("Error: Please provide a filename as first argument.")
+		os.Exit(1)
+	}
+	filename := os.Args[1]
+
+	fmt.Println(filename)
+
+	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Println("Error: ", err)
 		os.Exit(1)
 	}
 
-	lw := logWriter{}
+	fmt.Println(file)
 
-	io.Copy(lw, resp.Body)
+	io.Copy(os.Stdout, file)
 }
