@@ -9,10 +9,10 @@ import (
 
 type logWriter struct{}
 
-func (logWriter) Write(p []byte) (n int, err error) {
-	fmt.Println(p)
-
-	return len(p), nil
+func (logWriter) Write(bs []byte) (n int, err error) {
+	fmt.Println(bs)
+	fmt.Println("just wrote this many bytes:", len(bs))
+	return len(bs), nil
 }
 
 func main() {
